@@ -1,0 +1,25 @@
+---
+import Nav from "../components/nav.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<!--everything will be loaded in an iframe -->
+<Layout>
+    <iframe src="/home/" class="frame" id="frame"></iframe>
+    <Nav />
+  <script is:inline>
+	document.addEventListener("DOMContentLoaded", (event) => {
+if (!window.screen.width <= '800') { 
+}else {
+	console.log('bitch')
+	document.getElementById('sidebar').classList.remove('close')
+}
+	});
+  </script>
+    <script src="/wiki/space/space.js?script=false&loadoptions=true" is:inline
+	></script>
+	<script src="/wiki/space/liftoff.js?rocket=false&what=the+sigma" is:inline
+	></script>
+	<script src="/js/load.js" is:inline
+	></script>
+</Layout>

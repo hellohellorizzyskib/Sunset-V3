@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Google",
+    "img": "/images/google.png",
+    "href": "https://google.com"
+  },
+  {
+    "name": "Youtube",
+    "img": "/images/youtube.png",
+    "href": "https://youtube.com"
+  },
+  {
+    "name": "Discord",
+    "img": "/images/discord.png",
+    "href": "https://discord.com"
+  },
+  {
+    "name": "ChatGPT",
+    "img": "/images/chatgpt.png",
+    "href": "https://chatgpt.com"
+  },
+  {
+    "name": "Github",
+    "img": "/images/github.png",
+    "href": "https://github.com"
+  },
+  {
+    "name": "Tiktok",
+    "img": "/images/tiktok.png",
+    "href": "https://tiktok.com"
+  },
+  {
+    "name": "Snapchat",
+    "img": "/images/snapchat.png",
+    "href": "https://snapchat.com"
+  },
+  {
+    "name": "Instagram",
+    "img": "/images/instagram.png",
+    "href": "https://instagram.com"
+  }
+]
