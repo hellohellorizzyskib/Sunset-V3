@@ -34,8 +34,8 @@ const meow = {
 self.__uv$config = {
   prefix: "/wiki/space/",
   bare: "/bear/",
-  encodeUrl: meow.encode,
-  decodeUrl: meow.decode,
+  encodeUrl: Ultraviolet.codec.base64.encode,
+  decodeUrl: Ultraviolet.codec.base64.encode,
   handler: "/wiki/space/handoff.js",
   client: "/wiki/space/astro.js",
   bundle: "/wiki/space/space.js",
