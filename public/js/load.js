@@ -120,7 +120,7 @@ async function registerSW() {
   }
   await navigator.serviceWorker.register(stockSW);
   if(swreg === null) {
-    localStorage.setItem('swreg', 'registered')
+    localStorage.setItem('swreg2', 'registered')
     location.reload()
   }else {
     console.log('Service Worker Registered Using Ultraviolet ✅')
