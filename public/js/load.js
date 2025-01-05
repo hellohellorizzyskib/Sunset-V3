@@ -8,7 +8,7 @@ const p = localStorage.getItem("p");
 const clo = localStorage.getItem("cloak");
 const favicon = document.getElementById("favicon");
 const key = localStorage.getItem("key");
-const swreg = localStorage.getItem('swreg')
+const swreg = localStorage.getItem('swreg2')
 
 
 document.addEventListener("keydown", function (event) {
@@ -35,6 +35,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
   if(key === null) {
     localStorage.setItem("key", "`")
   }
+
+  if(swreg === null) {
+  navigator.serviceWorker.getRegistrations().then((registrations) => {
+    for (const registration of registrations) {
+      registration.unregister();
+    }
+  });
+  }  
 
   if(clo === "none") {
       favicon.href = "/favicon.svg";
