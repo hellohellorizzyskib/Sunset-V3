@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "Sunset-V3",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -14,7 +14,7 @@
     "@mercuryworkshop/bare-mux": "^2.1.7",
     "@mercuryworkshop/epoxy-transport": "^2.1.27",
     "@mercuryworkshop/wisp-js": "^0.3.3",
-    "@tomphttp/bare-server-node": "^2.0.2",
+    "@tomphttp/bare-server-node": "^2.0.1",
     "astro": "^4.16.16",
     "express": "^4.21.1"
   }

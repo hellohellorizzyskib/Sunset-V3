@@ -8,7 +8,7 @@ const p = localStorage.getItem("p");
 const clo = localStorage.getItem("cloak");
 const favicon = document.getElementById("favicon");
 const key = localStorage.getItem("key");
-const swreg = localStorage.getItem('swreg2')
+const swreg = localStorage.getItem('swreg3')
 
 
 document.addEventListener("keydown", function (event) {
@@ -120,7 +120,7 @@ async function registerSW() {
   }
   await navigator.serviceWorker.register(stockSW);
   if(swreg === null) {
-    localStorage.setItem('swreg2', 'registered')
+    localStorage.setItem('swreg3', 'registered')
     location.reload()
   }else {
     console.log('Service Worker Registered Using Ultraviolet ✅')
