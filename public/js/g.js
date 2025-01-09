@@ -68,7 +68,23 @@ async function loadG() {
     }
     const recentg = localStorage.getItem("recentg");
     console.log(recentg);
-    if (recentg === "") {
+    if(game.href.includes("/gg/")) {
+ gameimg.setAttribute(
+        "onclick",
+        `addHistoryGame(); window.location.href =  '` +
+          game.href +
+          `'; localStorage.setItem('recentg', '{"name": "` +
+          game.name +
+          `", "img": "` +
+          game.img +
+          `", "href": "` +
+          game.href +
+          `"}` +
+          recentg +
+          `'); addHistoryGame();`
+      );
+    }
+    else if (recentg === "") {
       gameimg.setAttribute(
         "onclick",
         `addHistoryGame(); window.location.href =  '` +
