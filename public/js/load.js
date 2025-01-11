@@ -8,7 +8,7 @@ const p = localStorage.getItem("p");
 const clo = localStorage.getItem("cloak");
 const favicon = document.getElementById("favicon");
 const key = localStorage.getItem("key");
-const swreg = localStorage.getItem('swreg')
+const swreg = localStorage.getItem('swreg3')
 
 
 document.addEventListener("keydown", function (event) {
@@ -36,69 +36,62 @@ document.addEventListener("DOMContentLoaded", (event) => {
     localStorage.setItem("key", "`")
   }
 
-  switch (clo) {
-    case "none":
+  if(swreg === null) {
+  navigator.serviceWorker.getRegistrations().then((registrations) => {
+    for (const registration of registrations) {
+      registration.unregister();
+    }
+  });
+  }  
+
+  if(clo === "none") {
       favicon.href = "/favicon.svg";
       document.title = "Sunset V3";
-      break;
-    case "google":
+  }else if(clo === "google") {
       favicon.href = "/assets/img/google.png";
       document.title = "Google";
-      break;
-    case "docs":
+  }else if(clo === "docs") {
       favicon.href = "/assets/img/docs.png";
       document.title = "Google Docs";
-      break;
-    case "classroom":
+}else if(clo === "classroom") {
       favicon.href = "/assets/img/classroom.png";
       document.title = "Classes";
-      break;
-    case "desmos":
+  }else if(clo === "desmos") {
       favicon.href = "/assets/img/desmos.ico";
       document.title = "Desmos Classroom Activities";
-      break;
-    case "canvas":
+  }else if(clo === "canvas") {
       favicon.href = "/assets/img/canvas.png";
       document.title = "Canvas";
-      break;
-    case "school":
+  }else if(clo === "school") {
       favicon.href = "/assets/img/school.png";
       document.title = "Schoolagy";
-      break;
-    case "power":
+  }else if(clo === "power") {
       favicon.href = "/assets/img/powerschool.png";
       document.title = "Login | PowerSchool";
-      break;
   }
 
   const page = localStorage.getItem("page");
   const iframe = document.getElementById("frame");
   if (page === null) {
   } else {
-    switch (page) {
-      case "home":
+  if(page === "home") {
         iframe.src = "/home";
-        break;
-      case "games":
+  }else if(page === "games") {
         iframe.src = "/g";
         document.getElementById("indexli").classList.remove("active");
         document.getElementById("gamesli").classList.add("active");
-        break;
-      case "dashboard":
+  }else if(page === "dashboard"){
         iframe.src = "/dashboard";
         document.getElementById("indexli").classList.remove("active");
         document.getElementById("dashboardli").classList.add("active");
-        break;
-      case "apps":
+  }else if(page === "apps"){
         iframe.src = "/a";
         document.getElementById("indexli").classList.remove("active");
         document.getElementById("appsli").classList.add("active");
-        break;
-      case "settings":
+  }else if(page === "apps"){
         iframe.src = "/settings";
         document.getElementById("indexli").classList.remove("active");
         document.getElementById("settingsli").classList.add("active");
-        break;
     }
   }
   //check them search engine
@@ -127,7 +120,7 @@ async function registerSW() {
   }
   await navigator.serviceWorker.register(stockSW);
   if(swreg === null) {
-    localStorage.setItem('swreg', 'registered')
+    localStorage.setItem('swreg3', 'registered')
     location.reload()
   }else {
     console.log('Service Worker Registered Using Ultraviolet ✅')
